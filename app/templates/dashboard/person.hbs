@@ -1,0 +1,29 @@
+<h2>Update Record</h2>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>{{model.name}}</td>
+    <td>{{model.age}}</td>
+  </tr>
+</table>
+<br>
+<form {{action 'updatePerson' model this on='submit'}}>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    {{input value=model.name class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label for="age">Age:</label>
+    {{input value=model.age class='form-control'}}
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default">Update</button>
+  </div>
+</form>
+
+<div class="form-group">
+  <button {{action 'deletePerson' model}} class="btn btn-danger">Delete</button>
+</div>
